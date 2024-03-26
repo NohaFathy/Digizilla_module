@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+        <report
+            id="report_digizilla"
+            model="digizilla.digizilla"
+            string="Digizilla Report"
+            report_type="qweb-pdf"
+            name="digizilla.report_template"
+            file="digizilla.report_template"
+        />
+        <template id="digizilla_report_template">
+            <t t-call="web.basic_layout">
+                <div class="page">
+                    <h2>Digizilla Report</h2>
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Gender</th>
+                                <th>Country</th>
+                                <th>Joining Date</th>
+                                <th>Tags</th>
+                                <th>Customers</th>
+                                <th>Company</th>
+                                <th>Notes</th>
+                                <!-- Comments excluded as per requirements -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="docs" t-as="record">
+                                <td><span t-field="record.name"/></td>
+                                <td><span t-field="record.gender"/></td>
+                                <td><span t-field="record.country"/></td>
+                                <td><span t-field="record.joining_date"/></td>
+                                <td><span t-field="record.tags"/></td>
+                                <td><span t-field="record.customers"/></td>
+                                <td><span t-field="record.company"/></td>
+                                <td><span t-field="record.notes"/></td>
+                                <!-- Comments excluded as per requirements -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>
+
